@@ -19,9 +19,23 @@ function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
+// Checks win conditions
+function checkWin() {
+  if (currentCount === targetCount) {
+    wins++;
+    $("#Wins").text(wins);
+    restart();
+  } else if (currentCount > targetCount) {
+    losses++;
+    $("#Losses").text(losses);
+    restart();
+  }
+}
+
 // Restart the game when the player wins or loses a round
 function restart() {
   currentCount = 0;
+  $("#currentCt").text(currentCount);
   targetValue.getNewVal();
   targetValue.appendVal();
   ruby.getNewVal();
@@ -33,7 +47,9 @@ function restart() {
 // Makes a new game when combined with the restart function. Discards all current win/loss scoring.
 function newGame() {
   wins = 0;
+  $("#Wins").text(wins);
   losses = 0;
+  $("#Losses").text(losses);
 }
 
 //------------Objects and Classes!-------------
@@ -85,19 +101,31 @@ $(document).ready(function() {
   newGame();
 
   // Each of the Gem divs are given an onclick handler that appends Gem value to player's target value, both in the code variable and the HTML div
+  // Then it checks for the win/loss conditions.
+
   $("#ruby").on("click", function() {
     ruby.appendVal();
+    checkWin();
   });
 
   $("#sapphire").on("click", function() {
     sapphire.appendVal();
+    checkWin();
   });
 
   $("#emerald").on("click", function() {
     emerald.appendVal();
+    checkWin();
   });
 
   $("#opal").on("click", function() {
     opal.appendVal();
+    checkWin();
+  });
+
+  // Should the player choose to give up their current game state, they can reset all of their wins and losses and start over.
+  $("#new-game").on("click", function() {
+    restart();
+    newGame();
   });
 });

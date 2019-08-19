@@ -2,6 +2,9 @@
 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" text="text/css" href="./assets/css/reset.css" /> -->
+  <link rel="stylesheet" text="text/css" href="./assets/css/style.css" />
+  <link rel="stylesheet" text="text/css" href="./assets/css/layout.css" />
   <title>Crystals Collector</title>
 </head>
 
@@ -9,23 +12,47 @@
   <h1>Crystal Collector!</h1>
 
   <!--How to play-->
-  <div id="instructions"></div>
+  <div id="instructions">
+    Each of the four gems hide a number. Click one of the gems to find out how
+    what number to add to your current number count!
+    <br /><br />
+    Your goal is to achieve the same number as the target count. But be careful!
+    If you end up with too many points, you'll lose the round! <br /><br />If
+    you should wish to throw away all of your current records of wins and
+    losses, just press 'Start Over' to begin anew!
+  </div>
 
   <!--All 4 Gem options-->
-  <div class="gem" id="ruby">Ruby</div>
-  <div class="gem" id="sapphire">Sapphire</div>
-  <div class="gem" id="emerald">Emerald</div>
-  <div class="gem" id="opal">Opal</div>
+  <div class="main">
+    <div class="gem" id="ruby"><img src="./assets/images/ruby.png" /></div>
+    <div class="gem" id="sapphire">
+      <img src="./assets/images/sapphire.png" />
+    </div>
+    <div class="gem" id="emerald">
+      <img src="./assets/images/emerald.png" />
+    </div>
+    <div class="gem" id="opal"><img src="./assets/images/opal.png" /></div>
+  </div>
 
   <!--Target Value-->
-  <div>Target Count: <span id="targetCt">0</span></div>
+  <div class="values">
+    <div class="counts">
+      Target Count:
+      <div class="count"><span id="targetCt">0</span></div>
+    </div>
 
-  <!--Current Value-->
-  <div>Current Count: <span id="currentCt">0</span></div>
+    <!--Current Value-->
+    <div class="counts">
+      Current Count:
+      <div class="count"><span id="currentCt">0</span></div>
+    </div>
+  </div>
 
   <!--Scoreboard-->
-  <div>Wins: <span id="Wins">0</span></div>
-  <div>Losses:<span id="Losses">0</span></div>
+  <div class="scoreboard">
+    <div class="score">Wins: <span id="Wins">0</span></div>
+    <div class="score">Losses:<span id="Losses">0</span></div>
+  </div>
 
   <!--Reset-->
   <div id="new-game">Start Over</div>

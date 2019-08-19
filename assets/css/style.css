@@ -1,0 +1,36 @@
+/* * {
+  border: 1px solid red;
+} */
+
+h1 {
+  font-size: 4em;
+  color: rgb(154, 173, 255);
+}
+
+#instructions {
+  color: grey;
+  background-image: linear-gradient(to bottom right, lavender, mistyrose);
+  border-radius: 10px;
+}
+
+.counts {
+  font-size: 1.25em;
+  color: rgb(237, 190, 255);
+}
+
+.count {
+  font-size: 4em;
+  color: pink;
+}
+
+.score {
+  color: plum;
+  font-size: 1.5em;
+}
+
+#new-game {
+  font-size: 1.5em;
+  background-color: rgb(161, 154, 255);
+  border-radius: 10px;
+  color: white;
+}
